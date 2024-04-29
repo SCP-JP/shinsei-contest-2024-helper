@@ -76,9 +76,12 @@ const getDrafts = () => {
   for (let i = 0; i < values.length; i++) {
     const draftId = values[i][0];
     if (!latestDraftIds.includes(draftId)) {
-      values[i][values[i].length - 1] = false;
-      // 通知
-      messages.push(`**【下書きが「批評中」から外れました】**\n> タイトル：${values[i][4]}\n> 作成者：${values[i][15]}\n> [下書きへのリンク](http://scp-jp-sandbox3.wikidot.com/${values[i][1]})`);
+      // 既存データの「批評中」フラグがtrueの場合のみ通知
+      if (values[i][values[i].length - 1]) {
+        values[i][values[i].length - 1] = false;
+        // 通知
+        messages.push(`**【下書きが「批評中」から外れました】**\n> タイトル：${values[i][4]}\n> 作成者：${values[i][15]}\n> [下書きへのリンク](http://scp-jp-sandbox3.wikidot.com/${values[i][1]})`);
+      }
     }
   }
 
