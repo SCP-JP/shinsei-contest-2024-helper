@@ -80,7 +80,7 @@ const getDrafts = () => {
       if (values[i][values[i].length - 1]) {
         values[i][values[i].length - 1] = false;
         // 通知
-        messages.push(`**【下書きが「批評中」から外れました】**\n> タイトル：${values[i][4]}\n> 作成者：${values[i][15]}\n> [下書きへのリンク](http://scp-jp-sandbox3.wikidot.com/${values[i][1]})`);
+        messages.push(`**【下書きが「批評中」から外れました】**\n> タイトル：${values[i][4]}\n> 作成者：${values[i][15]}\n> [下書きへのリンク](http://scp-jp-sandbox3.wikidot.com/${values[i][1]}) / [管理シート](https://docs.google.com/spreadsheets/d/1N48wYpWLMSxCZtYCmSLAn4szIbvLraqxsoYnyu08jxo/edit?usp=sharing)`);
       }
     }
   }
@@ -92,15 +92,15 @@ const getDrafts = () => {
     if (index === -1) {
       values.push(draft);
       // 通知
-      messages.push(`**【下書きが「批評中」になりました】**\n> タイトル：${draft[4]}\n> 作成者：${draft[15]}\n> [下書きへのリンク](http://scp-jp-sandbox3.wikidot.com/${draft[1]})`);
+      messages.push(`**【下書きが「批評中」になりました】**\n> タイトル：${draft[4]}\n> 作成者：${draft[15]}\n> [下書きへのリンク](http://scp-jp-sandbox3.wikidot.com/${draft[1]}) / [管理シート](https://docs.google.com/spreadsheets/d/1N48wYpWLMSxCZtYCmSLAn4szIbvLraqxsoYnyu08jxo/edit?usp=sharing)`);
     } else {
       // 前のデータの「批評中」フラグとの差分を確認
       if (values[index][values[index].length - 1] !== draft[draft.length - 1]) {
         // 前が批評中
         if (values[index][values[index].length - 1]) {
-          messages.push(`**【下書きが「批評中」から外れました】**\n> タイトル：${draft[4]}\n> 作成者：${draft[15]}\n> [下書きへのリンク](http://scp-jp-sandbox3.wikidot.com/${draft[1]})`);
+          messages.push(`**【下書きが「批評中」から外れました】**\n> タイトル：${draft[4]}\n> 作成者：${draft[15]}\n> [下書きへのリンク](http://scp-jp-sandbox3.wikidot.com/${draft[1]}) / [管理シート](https://docs.google.com/spreadsheets/d/1N48wYpWLMSxCZtYCmSLAn4szIbvLraqxsoYnyu08jxo/edit?usp=sharing)`);
         } else {
-          messages.push(`**【下書きが「批評中」になりました】**\n> タイトル：${draft[4]}\n> 作成者：${draft[15]}\n> [下書きへのリンク](http://scp-jp-sandbox3.wikidot.com/${draft[1]})`);
+          messages.push(`**【下書きが「批評中」になりました】**\n> タイトル：${draft[4]}\n> 作成者：${draft[15]}\n> [下書きへのリンク](http://scp-jp-sandbox3.wikidot.com/${draft[1]}) / [管理シート](https://docs.google.com/spreadsheets/d/1N48wYpWLMSxCZtYCmSLAn4szIbvLraqxsoYnyu08jxo/edit?usp=sharing)`);
         }
       }
 
