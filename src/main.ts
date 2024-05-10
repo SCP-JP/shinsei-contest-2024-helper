@@ -15,7 +15,7 @@ const getDrafts = () => {
       'Content-Type': 'application/json',
     },
     payload: JSON.stringify({
-      "category": "draft",
+      "category": "draft sharedpage",
       "tags": "+_event +_criticism-in",
       "id": true
     }),
